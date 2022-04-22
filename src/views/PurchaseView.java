@@ -1,6 +1,7 @@
 package views;
 
 import models.Purchase;
+import utils.Validator;
 
 import java.util.Scanner;
 
@@ -21,17 +22,17 @@ public class PurchaseView {
         scanner = new Scanner(System.in);
         title = "Please, type your name: ";
         System.out.println(title);
-        userName = scanner.nextLine();
+        userName = Validator.validateName(scanner);
         model.setClientName(userName);
 
         title = "Please, type the quantity of items (pieces): ";
         System.out.println(title);
-        quantity = scanner.nextInt();
+        quantity = Validator.validateQuantityInput(scanner);
         model.setQuantity(quantity);
 
         title = "Please, type the price for item (USD): ";
         System.out.println(title);
-        price = scanner.nextDouble();
+        price = Validator.validatePriceInput(scanner);
         model.setPrice(price);
 
         scanner.close();

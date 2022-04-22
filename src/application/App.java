@@ -12,7 +12,6 @@ public class App {
         PurchaseView view = new PurchaseView(model);
         PurchaseController controller = new PurchaseController(model, view);
 
-        // Запуск программы/приложения
         controller.runApp();
     }
 }
