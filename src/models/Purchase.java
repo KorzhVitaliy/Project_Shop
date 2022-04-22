@@ -35,13 +35,13 @@ public class Purchase implements Discount, Payment {
     }
 
     public int getDiscountRate(double payment) {
-        if (payment > 50) {
+        if (payment >= 50) {
             discount = 5;
         }
-        if (payment > 100) {
+        if (payment >=100) {
             discount = 10;
         }
-        if (payment > 100) {
+        if (payment > 200) {
             discount = 15;
         }
 
