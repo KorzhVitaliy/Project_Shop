@@ -34,15 +34,15 @@ public class Purchase implements Discount, Payment {
         this.price = price;
     }
 
-    public int getDiscountRate(int quantity) {
-        if (quantity == 3) {
+    public int getDiscountRate(double payment) {
+        if (payment > 50) {
             discount = 5;
         }
-        if (quantity <= 5) {
+        if (payment > 100) {
             discount = 10;
         }
-        if (quantity > 5) {
-            discount = 25;
+        if (payment > 100) {
+            discount = 15;
         }
 
         return discount;

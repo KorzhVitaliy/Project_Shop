@@ -24,7 +24,7 @@ public class PurchaseController {
         String paymentInitialRounded = Rounder.roundValue(initialPayment);
 
         //Расчёт процента скидки
-        int discountRate = model.getDiscountRate(model.getQuantity());
+        int discountRate = model.getDiscountRate(initialPayment);
 
         //Расчёт скидки
         double discount = model.calculateDiscount(initialPayment, discountRate);

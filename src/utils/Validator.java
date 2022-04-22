@@ -36,7 +36,7 @@ public class Validator {
     public static double validatePriceInput(Scanner scanner) {
         while (!scanner.hasNextDouble()) {
             String str = scanner.nextLine().trim();
-            System.out.printf(Constants.NAN_PRICE_MSG, str);
+            System.out.printf(Constants.NAN_PRICE_MSG,str);
         }
         double price = scanner.nextDouble();
         while (price <= 0) {
