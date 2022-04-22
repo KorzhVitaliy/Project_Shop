@@ -35,14 +35,14 @@ public class Purchase implements Discount, Payment {
     }
 
     public int getDiscountRate(int quantity) {
-        if (quantity >= 3) {
+        if (quantity == 3) {
             discount = 5;
-        } else if (quantity > 10) {
+        }
+        if (quantity <= 5) {
             discount = 10;
-        } else if (quantity > 20) {
+        }
+        if (quantity > 5) {
             discount = 25;
-        } else {
-            discount = 0;
         }
 
         return discount;
