@@ -37,7 +37,7 @@ public class PurchaseView {
         scanner.close();
     }
 
-    public void getOutput(String output){
+    public void getOutput(String output) {
         System.out.println(output);
     }
 }

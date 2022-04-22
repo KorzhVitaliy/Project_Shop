@@ -34,17 +34,7 @@ public class Purchase implements Discount, Payment {
         this.price = price;
     }
 
-    public int getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(int discount) {
-        this.discount = discount;
-    }
-
-    //Расчёт скидки по колличеству товара
-    @Override
-    public double calculateDiscount(int quantity, int discount) {
+    public int getDiscountRate(int quantity) {
         if (quantity > 3) {
             discount = 5;
         } else if (quantity > 10) {
@@ -58,6 +48,12 @@ public class Purchase implements Discount, Payment {
         return discount;
     }
 
+    //Расчёт скидки
+    @Override
+    public double calculateDiscount(double payment, int discount) {
+        return payment * discount / 100;
+    }
+
     //Расчёт платежа без скидки
     @Override
     public double calculatePayment(int quantity, double price) {
@@ -67,6 +63,6 @@ public class Purchase implements Discount, Payment {
     //Расчёт платежа со скидкой
     @Override
     public double calculatePayment(double payment, double discount) {
-        return payment * discount / 100;
+        return payment - discount;
     }
 }
