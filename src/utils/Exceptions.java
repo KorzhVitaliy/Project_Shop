@@ -2,7 +2,7 @@ package utils;
 
 import java.util.Scanner;
 
-public class Validator {
+public class Exceptions {
 
     // Валидация ввода имени
     public static String validateName(Scanner scanner) {
@@ -29,6 +29,7 @@ public class Validator {
             }
             quantity = scanner.nextInt();
         }
+
         return quantity;
     }
 
@@ -42,7 +43,7 @@ public class Validator {
         while (price <= 0) {
             while (!scanner.hasNextDouble()) {
                 String str = scanner.nextLine().trim();
-                System.out.printf(Constants.NAN_PRICE_MSG, str);
+                System.out.printf(Constants.NAN_PRICE_MSG,str);
             }
             price = scanner.nextDouble();
         }
